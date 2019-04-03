@@ -1,7 +1,10 @@
 # HackerNews infinite scroll reader
 
 A HackerNews reader using React, Redux and Bulma.
-Using NewsAPI to fetch the news. [Online version](https://swolfeyes.github.io/hackernews-infinite-reader/)
+Using NewsAPI to fetch the news. 
+
+[Online version](https://swolfeyes.github.io/hackernews-infinite-reader/)
+
 For this example, news related to [Apple](https://www.apple.com/) will be shown.
 
 ### Limitations
