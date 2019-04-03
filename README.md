@@ -15,7 +15,7 @@ For this example, news related to [Apple](https://www.apple.com/) will be shown.
 ### Local build
 ```
 git clone https://github.com/Swolfeyes/hackernews-infinite-reader.git
-cd developer-test
+cd hackernews-infinite-reader
 npm install
 npm run build
 npm start
