@@ -1,0 +1,104 @@
+$parent: '.article';
+
+.article {
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+
+    &__body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        min-height: 250px;
+        border-radius: 6px;
+
+        h1, h4 {
+            color: $white;
+            position: relative;
+            z-index: 2;
+        }
+
+        &__link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+       
+        &__description {
+            color: $white;
+            opacity: 0;
+            margin-top: 30px;
+            transform: translateY(50px);
+            transition: transform 0.3s, opacity 0.3s;
+            min-height: 100px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            transform: translate3d(0,50%,0);
+            transition: transform 0.3s, opacity 0.5s;
+            opacity: 0;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(51, 0, 27, 0.8), rgba(255, 0, 132, 0.5));
+    }
+
+    &:hover {
+            
+        &::before {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #{$parent}__body {
+
+            &::before {
+                opacity: 1;
+                transform: translate3d(0,0,0);
+            }
+
+            &__description {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .article {
+        &__body {
+            position: relative;
+
+            &::before {
+                display: none;
+            }
+
+            &__description {
+                display: none;
+            }
+        }
+    }
+}

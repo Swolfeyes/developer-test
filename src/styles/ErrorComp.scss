@@ -1,0 +1,15 @@
+.notification {
+  p {
+    max-width: 300px;
+  }
+  
+  &__button.button {
+    background: transparent;
+    color: $white;
+    border: 1px solid $white;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
